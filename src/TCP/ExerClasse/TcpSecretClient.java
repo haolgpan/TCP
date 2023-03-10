@@ -1,6 +1,4 @@
-package TCP;
-
-import TCP.TcpSocketClient;
+package TCP.ExerClasse;
 
 import java.io.BufferedReader;
 import java.io.IOException;

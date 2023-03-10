@@ -1,4 +1,4 @@
-package TCP;
+package TCP.Correction;
 
 public class SecretNum {
 	/* Classe que genera numeros aleatoris per jugar a adivinar-los i els comprova

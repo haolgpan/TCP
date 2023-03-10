@@ -1,4 +1,4 @@
-package mp9.uf3.tcp.joc;
+package TCP.Correction;
 
 import java.io.BufferedReader;
 import java.io.IOException;

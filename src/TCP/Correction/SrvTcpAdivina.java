@@ -1,6 +1,6 @@
-package mp9.uf3.tcp.joc;
+package TCP.Correction;
 
-import mp9.uf3.udp.unicast.joc.SecretNum;
+import TCP.ExerClasse.SecretNum;
 
 import java.io.IOException;
 import java.net.ServerSocket;
