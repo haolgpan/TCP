@@ -29,6 +29,8 @@ public class ThreadList implements Runnable{
                         .stream()
                         .sorted()
                         .distinct().toList();
+                System.out.println("Llista rebuda:" + llista.getNom() + " " + llista.getNumberList());
+                System.out.println("Processant...");
                 llista.getNumberList().clear();
                 llista.getNumberList().addAll(modifiedList);
                 out.writeObject(llista);
