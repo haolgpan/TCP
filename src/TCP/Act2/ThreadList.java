@@ -1,16 +1,17 @@
 package TCP.Act2;
 
-import java.io.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ThreadList implements Runnable{
-    private Socket clientSocket;
-    private ObjectInputStream in;
-    private ObjectOutputStream out;
-    private boolean continueConnected;
+    private final Socket clientSocket;
+    private final ObjectInputStream in;
+    private final ObjectOutputStream out;
+    private final boolean continueConnected;
 
     public ThreadList(Socket clientSocket) throws IOException {
         this.clientSocket = clientSocket;
@@ -27,8 +28,7 @@ public class ThreadList implements Runnable{
                 List<Integer> modifiedList = llista.getNumberList()
                         .stream()
                         .sorted()
-                        .distinct()
-                        .collect(Collectors.toList());
+                        .distinct().toList();
                 llista.getNumberList().clear();
                 llista.getNumberList().addAll(modifiedList);
                 out.writeObject(llista);
