@@ -33,6 +33,10 @@ public class ThreadList implements Runnable{
                 llista.getNumberList().addAll(modifiedList);
                 out.writeObject(llista);
                 out.flush();
+            } catch (EOFException e) {
+                // S'ha arribat al final del flux, tanca la connexió
+                close(clientSocket);
+                break;
             } catch (ClassNotFoundException | IOException e) {
                 e.printStackTrace();
             }

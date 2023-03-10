@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="305af6c2-cb21-4735-a43d-b1e6b6464572" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="305af6c2-cb21-4735-a43d-b1e6b6464572" name="Changes" comment="TODO 2">
       <change beforePath="$PROJECT_DIR$/src/TCP/Act2/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Act2/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Act2/Llista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Act2/Llista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Act2/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Act2/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Act2/ThreadList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Act2/ThreadList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Correction/ClientTcpAdivina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Correction/ClientTcpAdivina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Correction/SecretNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Correction/SecretNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Correction/SrvTcpAdivina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Correction/SrvTcpAdivina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Correction/ThreadSevidorAdivina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Correction/ThreadSevidorAdivina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/ExerClasse/SecretNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/ExerClasse/SecretNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSecretClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSecretClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSecretServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSecretServ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSocketClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/ExerClasse/TcpSocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Testing/TcpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Testing/TcpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TCP/Testing/TcpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCP/Testing/TcpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +100,14 @@
       <option name="presentableId" value="Default" />
       <updated>1677685454608</updated>
     </task>
+    <task id="LOCAL-00001" summary="TODO 2">
+      <created>1678466026169</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678466026169</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,5 +120,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TODO 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO 2" />
   </component>
 </project>

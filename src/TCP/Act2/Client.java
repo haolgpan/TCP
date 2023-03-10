@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Client extends Thread{
-    private String Nom;
     private Socket socket;
     private InputStream in;
     private OutputStream out;
@@ -33,6 +32,7 @@ public class Client extends Thread{
     public void run(){
         ObjectOutputStream out;
         ObjectInputStream in;
+        String nom, answer;
         try {
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
@@ -42,7 +42,7 @@ public class Client extends Thread{
         while (continueConnected){
             try {
                 System.out.println("Introdueix el nom de la llista:");
-                String nom = scin.nextLine();
+                nom = scin.nextLine();
                 Llista llista = new Llista(nom, generarLlistaNumeros());
                 out.writeObject(llista);
                 out.flush();
@@ -50,7 +50,7 @@ public class Client extends Thread{
                 Llista llistaOrdenada = (Llista) in.readObject();
                 System.out.println("Llista ordenada i sense repetits: " + llistaOrdenada.getNom() + " " + llistaOrdenada.getNumberList());
                 System.out.println("Vols tornar a enviar una llista? (si/no)");
-                String answer = scin.nextLine();
+                answer = scin.nextLine();
                 if(answer.equals("no")) {
                     continueConnected = false;
                     in.close();
