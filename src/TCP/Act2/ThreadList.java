@@ -13,11 +13,15 @@ public class ThreadList implements Runnable{
     private final ObjectOutputStream out;
     private final boolean continueConnected;
 
-    public ThreadList(Socket clientSocket) throws IOException {
+    public ThreadList(Socket clientSocket){
         this.clientSocket = clientSocket;
-        in = new ObjectInputStream(clientSocket.getInputStream());
-        out = new ObjectOutputStream(clientSocket.getOutputStream());
-        continueConnected = true;
+        try {
+            in = new ObjectInputStream(clientSocket.getInputStream());
+            out = new ObjectOutputStream(clientSocket.getOutputStream());
+            continueConnected = true;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
