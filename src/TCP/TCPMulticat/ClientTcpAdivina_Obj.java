@@ -1,4 +1,4 @@
-package TCP.TestingMultiTCP;
+package TCP.TCPMulticat;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -19,8 +19,10 @@ public class ClientTcpAdivina_Obj extends Thread {
     private boolean continueConnected;
     private Tauler t;
     private Jugada j;
+    private MulticastClient client;
 
     private ClientTcpAdivina_Obj(String hostname, int port) {
+        client = new MulticastClient();
         try {
             socket = new Socket(InetAddress.getByName(hostname), port);
             in = socket.getInputStream();
@@ -69,6 +71,13 @@ public class ClientTcpAdivina_Obj extends Thread {
                 }
             }
         }
+        try {
+            client.init();
+            client.setT(t);
+            client.runClient();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         close(socket);
 
     }
@@ -114,7 +123,6 @@ public class ClientTcpAdivina_Obj extends Thread {
         ipSrv = sip.next();
         System.out.println("Nom jugador:");
         jugador = sip.next();
-
         ClientTcpAdivina_Obj clientTcp = new ClientTcpAdivina_Obj(ipSrv,5558);
         clientTcp.Nom = jugador;
         clientTcp.start();

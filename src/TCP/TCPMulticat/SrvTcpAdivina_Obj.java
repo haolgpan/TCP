@@ -1,14 +1,13 @@
-package TCP.MultiUCPTCP;
+package TCP.TCPMulticat;
 
 import TCP.ExerClasse.SecretNum;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.net.SocketException;
 
-public class SrvTcpAdivina_Obj {
+public class SrvTcpAdivina_Obj implements Runnable{
     /* Servidor TCP que genera un número perquè ClientTcpAdivina_Obj.java jugui a encertar-lo
      * i on la comunicació dels diferents jugadors la gestionaran els Threads : ThreadServidorAdivina_Obj.java
      * */
@@ -16,6 +15,7 @@ public class SrvTcpAdivina_Obj {
     private int port;
     private SecretNum ns;
     private Tauler t;
+    ServerSocket serverSocket = null;
 
     private SrvTcpAdivina_Obj(int port ) {
         this.port = port;
@@ -24,7 +24,7 @@ public class SrvTcpAdivina_Obj {
     }
 
     private void listen() {
-        ServerSocket serverSocket = null;
+
         Socket clientSocket = null;
         try {
             serverSocket = new ServerSocket(port);
@@ -36,14 +36,32 @@ public class SrvTcpAdivina_Obj {
                 ThreadSevidorAdivina_Obj FilServidor = new ThreadSevidorAdivina_Obj(clientSocket, ns, t);
                 Thread client = new Thread(FilServidor);
                 client.start();
+
             }
         } catch (IOException ex) {
-            Logger.getLogger(SrvTcpAdivina_Obj.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(SrvTcpAdivina_Obj.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Tancant servidors...");
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SrvTcpAdivina_Obj srv = new SrvTcpAdivina_Obj(5558);
-        srv.listen();
+        MulticastServer srvVel = new MulticastServer(5557, "224.0.11.111",srv.t);
+        Thread thread = new Thread(srv);
+        thread.start();
+        srvVel.runServer();
+        System.out.println("Stopped!");
+        try {
+            srv.serverSocket.close();
+        }catch (SocketException e){
+            System.out.println("Tancant el joc...");
+        }
+
+//        System.exit(0);
+    }
+
+    @Override
+    public void run() {
+        listen();
     }
 }

@@ -1,4 +1,4 @@
-package TCP.MultiUCPTCP;
+package TCP.TCPMulticat;
 
 import TCP.ExerClasse.SecretNum;
 
@@ -26,6 +26,7 @@ public class ThreadSevidorAdivina_Obj implements Runnable {
         in = clientSocket.getInputStream();
         out = clientSocket.getOutputStream();
         System.out.println("canals i/o creats amb un nou jugador");
+        System.out.println("num secret es " + ns.getNum());
     }
 
     @Override
